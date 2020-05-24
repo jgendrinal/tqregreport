@@ -1,12 +1,13 @@
 #' This function sets up the reporting containing the analysis
 #'
-#' @description FillIn
+#' FillIn
 #'
 #' @param report_year
 #' @param report_month
 #'
 #' @importFrom fs path
 #' @importFrom usethis use_directory use_template
+#' @return
 #' @export
 setup <- function(report_year, report_quarter) {
   report_path <- fs::path("reports", report_year, paste0("Q", report_quarter))

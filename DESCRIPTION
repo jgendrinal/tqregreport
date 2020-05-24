@@ -17,4 +17,8 @@ Imports:
     usethis,
     fs,
     tidyquant,
-    stringr
+    stringr,
+    readr,
+    magrittr,
+    rmarkdown,
+    dplyr

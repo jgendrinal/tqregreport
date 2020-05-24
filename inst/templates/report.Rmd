@@ -1,0 +1,21 @@
+---
+title: "Top 5 performing stocks, {{{ report_ year }}} Q{{{ report_quarter }}}"
+output: pdf_document
+---
+
+```{r setup, echo=FALSE, warning=FALSE, cache=FALSE}
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(fs)
+
+data_path <- fs::path("data/top5.csv")
+```
+
+```{r echo=FALSE, message=FALSE}
+read_csv(data_path) %>%
+  ggplot(aes(x = date, y = adjusted, group = symbol)) + 
+  geom_line(aes(color = symbol)) + 
+  ggtitle("Top 5 Stock Performance {{{ report_ year }}} Q{{{ report_quarter }}}")
+```
+
